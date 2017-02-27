@@ -51,7 +51,7 @@ stmt ::= assign
        | if
        | loop
        | cond
-       | stmt
+       | func
 stmts ::= stmt*
 
 program ::= '.i' (func | assign)* '!' $
