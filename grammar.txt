@@ -1,0 +1,56 @@
+bool ::= 'true'
+       | 'false'
+number ::= [0-9]+ ('.' [0-9]+)?
+string ::= '"' ([^!] | '\' .)* '!'
+array ::= '{' log* '!'
+func ::= '$' identifier log* (stmts '!')
+       | '>' log
+
+identifier ::= [a-zA-Z]
+             | '_'
+variable ::= identifier ('{' log '!')? ('.' variable)?
+call ::= variable '(' log* '!'
+       | ':' variable log* '!'
+
+literal ::= bool
+          | number
+          | string
+          | array
+          | func
+
+
+factor ::= literal
+         | '+' factor
+         | '-' factor
+         | '~' factor
+         | variable
+         | call
+         | '(' log '!'
+term ::= term ('*' | '/' | '%') factor
+       | factor
+expr ::= expr ('+' | '-') term
+       | term
+cmp ::= expr ('==' | '!=' | '<' | '>' | '<=' | '>=') expr
+      | expr
+log ::= log ('&' | '|') cmp
+      | cmp
+
+assign ::= '=' log variable
+elif ::= 'elif' log stmts elif
+       | 'else' stmts '!'
+       | '!'
+if ::= if log stmts elif
+loop ::= '@' stmts '!'
+cond ::= '#' log stmts '!'
+return ::= '>' log
+break ::= '^'
+cont ::= '~'
+
+stmt ::= assign
+       | if
+       | loop
+       | cond
+stmts ::= stmt*
+
+
+program ::= '.i' (func | assign)* '!' $
