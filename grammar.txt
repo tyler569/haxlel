@@ -3,14 +3,6 @@ bool ::= 'true'
 number ::= [0-9]+ ('.' [0-9]+)?
 string ::= '"' ([^!] | '\' .)* '!'
 array ::= '{' log* '!'
-func ::= '$' identifier log* (stmts '!')
-       | '>' log
-
-identifier ::= [a-zA-Z]
-             | '_'
-variable ::= identifier ('{' log '!')? ('.' variable)?
-call ::= variable '(' log* '!'
-       | ':' variable log* '!'
 
 literal ::= bool
           | number
@@ -18,6 +10,12 @@ literal ::= bool
           | array
           | func
 
+identifier ::= [a-zA-Z]
+             | '_'
+variable ::= identifier ('{' log '!')? ('.' variable)?
+
+call ::= variable '(' log* '!'
+       | ':' variable log* '!'
 
 factor ::= literal
          | '+' factor
@@ -46,11 +44,14 @@ return ::= '>' log
 break ::= '^'
 cont ::= '~'
 
+func ::= '$' variable log* (stmts '!')
+       | '>' log
+
 stmt ::= assign
        | if
        | loop
        | cond
+       | stmt
 stmts ::= stmt*
-
 
 program ::= '.i' (func | assign)* '!' $
