@@ -3,7 +3,7 @@ Haxlel is supposed to be a joke language while also allowing a program to be int
 
 Objectives:
 * make a certain individual hate me for this.
-* allow it to be interpreted in a single-pass with optimizations.
+* allow it to be interpreted in a single-pass with optimizations (generate AST while running it so it can be later optimized if the AST ever gets traversed in the future).
 * allow it to be parsed with no tokens of look ahead.
 
 ## Program examples
