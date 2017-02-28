@@ -44,7 +44,7 @@ return ::= '>' log
 break ::= '^'
 cont ::= '~'
 
-func ::= '$' variable log* (stmts '!')
+func ::= '$' variable identifier* (stmts '!')
        | '>' log
 
 stmt ::= assign
