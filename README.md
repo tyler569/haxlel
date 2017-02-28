@@ -48,9 +48,9 @@ $ fibs n
 Pattern matching
 ```haxlel
 .i
-$ fibs 0 > 0
-$ fibs 1 > 1
-$ fibs n > fibs(n-2! + fibs(n-1!
+$ fibs 0 ~ 0
+$ fibs 1 ~ 1
+$ fibs n ~ fibs(n-2! + fibs(n-1!
 ```
 ```haxlel
 .i$fibs0>0$fibs1>1$fibs n>fibs(n-2!+fibs(n-1!
@@ -93,8 +93,8 @@ $fact n if n==0>1!>n*fact(n-1?
 ```
 Pattern matching
 ```haxlel
-$ fact 0 > 1
-$ fact n > n * fact(n-1!
+$ fact 0 ~ 1
+$ fact n ~ n * fact(n-1!
 ```
 ```haxlel
 $fact0=1$fact n=n*fact(n-1!
