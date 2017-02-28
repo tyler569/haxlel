@@ -12,7 +12,18 @@ Objectives:
 ## Program examples
 ### Hello, world!
 ```haxlel
-$main:print"Hello, world\!?
+.i
+print"Hello, world\!?
+```
+
+```haxlel
+.i
+$ helloWorld ~ print("Hello, world\!?
+
+helloWorld(!
+```
+```
+.i$helloWorld~print("Hello, world\!?helloWorld(!
 ```
 
 ### Fibonacci
