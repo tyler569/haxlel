@@ -1,7 +1,7 @@
 bool ::= 'true'
        | 'false'
 number ::= [0-9]+ ('.' [0-9]+)?
-string ::= '"' ([^!] | '\' .)* '!'
+string ::= '"' ([^!?] | '\' .)* '!'
 array ::= '{' log* '!'
 
 literal ::= bool
