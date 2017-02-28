@@ -28,7 +28,7 @@ term ::= term ('*' | '/' | '%') factor
        | factor
 expr ::= expr ('+' | '-') term
        | term
-cmp ::= expr ('==' | '!=' | '<' | '>' | '<=' | '>=') expr
+cmp ::= expr ('~=' | ==' | '!=' | '<' | '>' | '<=' | '>=') expr
       | expr
 log ::= log ('&' | '|') cmp
       | cmp
