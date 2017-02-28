@@ -15,7 +15,7 @@ Objectives:
 .i
 print"Hello, world\!?
 ```
-
+Or use functions
 ```haxlel
 .i
 $ helloWorld ~ print("Hello, world\!?
@@ -24,6 +24,18 @@ helloWorld(!
 ```
 ```
 .i$helloWorld~print("Hello, world\!?helloWorld(!
+```
+Maybe less characters, eh?
+```haxlel
+.i
+$ helloWorld
+  :print"Hello, world\!
+?
+
+helloWorld(!
+```
+```haxlel
+.i$helloWorld:print"Hello, world\!?helloWorld(!
 ```
 
 ### Fibonacci
