@@ -45,7 +45,7 @@ break ::= '^'
 cont ::= '~'
 
 func ::= '$' variable identifier* (stmts '!')
-       | '>' log
+       | '~' log
 
 stmt ::= assign
        | if
@@ -54,4 +54,4 @@ stmt ::= assign
        | func
 stmts ::= stmt*
 
-program ::= '.i' (func | assign)* '!' $
+program ::= '.i' stmts '!' $
