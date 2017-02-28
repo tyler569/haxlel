@@ -6,6 +6,9 @@ Objectives:
 * allow it to be interpreted in a single-pass with optimizations (generate AST while running it so it can be later optimized if the AST ever gets traversed in the future).
 * allow it to be parsed with no tokens of look ahead.
 
+## Problems
+* ebnf-like grammar cannot represent simple things like a global terminator `?` without making things complicated.
+
 ## Program examples
 ### Hello, world!
 ```haxlel
