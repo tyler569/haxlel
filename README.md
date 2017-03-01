@@ -98,7 +98,7 @@ $ fibs n
 !
 ```
 ```haxlel
-.i$fibsN=0a=1b#N>0=b t=b+a b=t a=N-1 N!>a!
+.i$fibsN=0A=1b#N>0=bT=b+Ab=tA=N-1N!>a!
 ```
 
 ### Factorial
