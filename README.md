@@ -62,8 +62,8 @@ $ fibs n
     > n
   !
   
-  >fibs(n-2! + fibs(n-1!
-!
+  >fibs(n-2! + fibs(n-1
+?
 ```
 ```haxlel
 .i$fibsNifN==0|N==1>N!>fibs(N-2!+fibs(N-1?
@@ -120,7 +120,7 @@ $ fact 0 > 1
 $ fact n > n * fact(n-1!
 ```
 ```haxlel
-$fact0=1$factN=N*fact(N-1!
+$fact0>1$factN>N*fact(N-1!
 ```
 Non-recursive
 ```haxlel
