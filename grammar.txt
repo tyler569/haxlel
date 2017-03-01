@@ -46,7 +46,7 @@ break ::= '^'
 cont ::= '~'
 
 func ::= '$' variable identifier* (stmts '!')
-       | '~' log
+       | '>' log
 
 stmt ::= assign
        | if
