@@ -1,9 +1,9 @@
 use std::fmt;
+use std::option::Option;
 
 #[derive(PartialEq, Clone, Copy)]
 pub enum TokenType {
-    Begin,
-    Boolean, Number, String,
+    BooleanTrue, BooleanFalse, Number, String,
     Identifier,
     Dot,
     Colon,
@@ -19,11 +19,15 @@ pub enum TokenType {
     LocalTerminator, GlobalTerminator
 }
 
-
+#[derive(PartialEq, Clone)]
+pub struct TokenLocation {
+    pub character: usize,
+    pub line: usize
+}
 
 #[derive(PartialEq, Clone)]
 pub struct Token {
     pub token_type: TokenType,
-    pub value: String,
-    pub location: (usize, usize)
+    pub value: Option<String>,
+    pub location: TokenLocation
 }
