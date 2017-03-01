@@ -10,7 +10,8 @@ literal ::= bool
           | array
           | func
 
-identifier ::= [a-zA-Z]
+identifier ::= [a-z]
+             | [A-Z]
              | '_'
 variable ::= identifier ('{' log '!')? ('.' variable)?
 
