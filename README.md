@@ -12,22 +12,19 @@ Objectives:
 ## Program examples
 ### Hello, world!
 ```haxlel
-.i
 print"Hello, world\!?
 ```
 Or use functions
 ```haxlel
-.i
 $ helloworld > print("Hello, world\!?
 
 helloworld(!
 ```
 ```
-.i$helloworld>print("Hello, world\!?helloWorld(!
+$helloworld>print("Hello, world\!?helloWorld(!
 ```
 Maybe less characters, eh?
 ```haxlel
-.i
 $ helloworld
   :print"Hello, world\!
 ?
@@ -40,7 +37,6 @@ helloworld(!
 
 ### Fibonacci
 ```haxlel
-.i
 $ fibs n
   if n == 0
     > 0
@@ -52,7 +48,7 @@ $ fibs n
 ?
 ```
 ```haxlel
-.i$fibsNifN==0>0elifN==1>1!>fibs(N-2!+fibs(N-1?
+$fibsNifN==0>0elifN==1>1!>fibs(N-2!+fibs(N-1?
 ```
 Boolean operator
 ```haxlel
@@ -66,21 +62,19 @@ $ fibs n
 ?
 ```
 ```haxlel
-.i$fibsNifN==0|N==1>N!>fibs(N-2!+fibs(N-1?
+$fibsNifN==0|N==1>N!>fibs(N-2!+fibs(N-1?
 ```
 Pattern matching
 ```haxlel
-.i
 $ fibs 0 > 0
 $ fibs 1 > 1
 $ fibs n > fibs(n-2! + fibs(n-1!
 ```
 ```haxlel
-.i$fibs0>0$fibs1>1$fibsN>fibs(N-2!+fibs(N-1!
+$fibs0>0$fibs1>1$fibsN>fibs(N-2!+fibs(N-1!
 ```
 Non-recursive
 ```haxlel
-.i
 $ fibs n
   = 0 a
   = 1 b
@@ -98,7 +92,7 @@ $ fibs n
 !
 ```
 ```haxlel
-.i$fibsN=0A=1B#N>0=Bt=B+aB=t A=N-1N!>a!
+$fibsN=0A=1B#N>0=Bt=B+aB=t A=N-1N!>a!
 ```
 
 ### Factorial
