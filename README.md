@@ -1,7 +1,14 @@
 # Haxlel
+## Description
 Haxlel is supposed to be a joke language while also allowing a program to be interpreted in a single pass. **The grammar may be changed at this stage to allow for the parsing of a source with no peeking to latter lexemes**. The interpreter will not include any standard libraries: the language is supposed to be something stupid and annoying.
 
-Objectives:
+## Paradigms
+* Imperative
+* Procedural
+* Structured
+* Functional
+
+## Objectives
 * make a certain individual hate me for this.
 * allow it to be interpreted in a single-pass with optimizations (generate AST while running it so it can be later optimized if the AST ever gets traversed in the future).
 * allow it to be parsed with no tokens of look ahead.
