@@ -14,9 +14,52 @@ pub enum TokenType {
     Assign,
     If, ElseIf, Else,
     Loop, ConditionalLoop,
-    Return, Break, Continue,
+    Break,
     Function,
-    LocalTerminator, GlobalTerminator
+    LocalTerminator, GlobalTerminator,
+    Eof
+}
+
+impl ToString for TokenType {
+    fn to_string(&self) -> String {
+        String::from(match *self {
+            TokenType::BooleanTrue => "BooleanTrue",
+            TokenType::BooleanFalse => "BooleanFalse",
+            TokenType::Number => "Number",
+            TokenType::String => "String",
+            TokenType::Identifier => "Identifier",
+            TokenType::Dot => "Dot",
+            TokenType::Colon => "Colon",
+            TokenType::Plus => "Plus",
+            TokenType::Minus => "Minus",
+            TokenType::Asterisk => "Asterisk",
+            TokenType::Slash => "Slash",
+            TokenType::Percentage => "Percentage",
+            TokenType::Approx => "Approx",
+            TokenType::ReferenceEquals => "ReferenceEquals",
+            TokenType::Equals => "Equals",
+            TokenType::NotEquals => "NotEquals",
+            TokenType::Less => "Less",
+            TokenType::Greater => "Greater",
+            TokenType::LessEquals => "LessEquals",
+            TokenType::GreaterEquals => "GreaterEquals",
+            TokenType::And => "And",
+            TokenType::Or => "Or",
+            TokenType::Bracket => "Bracket",
+            TokenType::CurlyBracket => "CurlyBracket",
+            TokenType::Assign => "Assign",
+            TokenType::If => "If",
+            TokenType::ElseIf => "ElseIf",
+            TokenType::Else => "Else",
+            TokenType::Loop => "Loop",
+            TokenType::ConditionalLoop => "ConditionalLoop",
+            TokenType::Break => "Break",
+            TokenType::Function => "Function",
+            TokenType::LocalTerminator => "LocalTerminator",
+            TokenType::GlobalTerminator => "GlobalTerminator",
+            TokenType::Eof => "Eof"
+        })
+    }
 }
 
 #[derive(PartialEq, Clone)]

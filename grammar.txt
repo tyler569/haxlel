@@ -1,5 +1,5 @@
-bool ::= 'true'
-       | 'false'
+bool ::= 'true' | 'TRUE'
+       | 'false' | 'FALSE'
 number ::= [0-9]+ ('.' [0-9]+)?
 string ::= '"' ([^!?] | '\' .)* '!'
 array ::= '{' log* '!'
@@ -15,8 +15,7 @@ identifier ::= [a-z]
              | '_'
 variable ::= identifier ('{' log '!')? ('.' variable)?
 
-call ::= variable '(' log* '!'
-       | ':' variable log* '!'
+call ::= ':' variable log* '!'
 
 factor ::= literal
          | '+' factor
@@ -55,4 +54,4 @@ stmt ::= assign
        | func
 stmts ::= stmt*
 
-program ::= '.i' stmts '!' $
+program ::= stmts '!' $

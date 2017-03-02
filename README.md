@@ -12,27 +12,27 @@ Objectives:
 ## Program examples
 ### Hello, world!
 ```haxlel
-print"Hello, world\!?
+:println"Hello, world\!?
 ```
 Or use functions
 ```haxlel
-$ helloworld > print("Hello, world\!?
+$ helloworld > :println"Hello, world\!?
 
-helloworld(!
+:helloworld!
 ```
 ```
-$helloworld>print("Hello, world\!?helloWorld(!
+$helloworld>:println"Hello, world\!?:helloWorld!
 ```
 Maybe less characters, eh?
 ```haxlel
 $ helloworld
-  :print"Hello, world\!
+  :println"Hello, world\!
 ?
 
-helloworld(!
+:helloworld!
 ```
 ```haxlel
-.i$helloworld:print"Hello, world\!?helloWorld(!
+$helloworld:println"Hello, world\!?:helloWorld!
 ```
 
 ### Fibonacci
@@ -44,34 +44,33 @@ $ fibs n
     > 1
   !
   
-  > fibs(n-2! + fibs(n-1
+  > :fibs n-2! + :fibs n-1
 ?
 ```
 ```haxlel
-$fibsNifN==0>0elifN==1>1!>fibs(N-2!+fibs(N-1?
+$fibsNifN==0>0elifN==1>1!>:fibsN-2!+:fibsN-1?
 ```
 Boolean operator
 ```haxlel
-.i
 $ fibs n
   if n == 0 | n == 1
     > n
   !
   
-  >fibs(n-2! + fibs(n-1
+  >:fibs n-2! + :fibs n-1
 ?
 ```
 ```haxlel
-$fibsNifN==0|N==1>N!>fibs(N-2!+fibs(N-1?
+$fibsNifN==0|N==1>N!>:fibsN-2!+:fibsN-1?
 ```
 Pattern matching
 ```haxlel
 $ fibs 0 > 0
 $ fibs 1 > 1
-$ fibs n > fibs(n-2! + fibs(n-1!
+$ fibs n > :fibs n-2! + :fibs n-1!
 ```
 ```haxlel
-$fibs0>0$fibs1>1$fibsN>fibs(N-2!+fibs(N-1!
+$fibs0>0$fibs1>1$fibsN>:fibsN-2!+:fibsN-1!
 ```
 Non-recursive
 ```haxlel
@@ -92,7 +91,7 @@ $ fibs n
 !
 ```
 ```haxlel
-$fibsN=0A=1B#N>0=Bt=B+aB=t A=N-1N!>a!
+$fibsN=0a=1b#n>0=bT=b+aB=tA=n-1n!>a!
 ```
 
 ### Factorial
@@ -106,7 +105,7 @@ $ fact n
 ?
 ```
 ```haxlel
-$factNifN==0>1!>N*fact(N-1?
+$factNifN==0>1!>n*:factN-1?
 ```
 Pattern matching
 ```haxlel
@@ -114,7 +113,7 @@ $ fact 0 > 1
 $ fact n > n * fact(n-1!
 ```
 ```haxlel
-$fact0>1$factN>N*fact(N-1!
+$fact0>1$factN>n*:factN-1!
 ```
 Non-recursive
 ```haxlel
@@ -130,5 +129,5 @@ $ fact n
 !
 ```
 ```haxlel
-$factN=1r#N>1=r*Nr=N-1N!>r!
+$factN=1r#n>1=r*nR=n-1n!>r!
 ```
