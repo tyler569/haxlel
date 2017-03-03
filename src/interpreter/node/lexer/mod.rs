@@ -1,7 +1,9 @@
-pub mod token;
-use self::token::TokenType;
-use self::token::TokenLocation;
-use self::token::Token;
+pub mod error;
+use self::error::token::TokenType;
+use self::error::token::TokenLocation;
+use self::error::token::Token;
+
+use self::error::Error;
 
 use std::string::String;
 
@@ -29,7 +31,7 @@ fn advance(state: &mut LexerState) {
     }
 }
 
-fn get_identifier(lowercase: bool, state: &mut LexerState) -> Result<Token, &'static str> {
+fn get_identifier(lowercase: bool, state: &mut LexerState) -> Result<Token, Error> {
     let mut result = String::new();
 
     let location = state.location.clone();
@@ -82,7 +84,7 @@ fn get_identifier(lowercase: bool, state: &mut LexerState) -> Result<Token, &'st
     })
 }
 
-fn get_number(state: &mut LexerState) -> Result<Token, &'static str> {
+fn get_number(state: &mut LexerState) -> Result<Token, Error> {
     let mut result = String::new();
     
     let location = state.location.clone();
@@ -108,7 +110,7 @@ fn get_number(state: &mut LexerState) -> Result<Token, &'static str> {
             }
             
             if state.character == '.' {
-                Err("Number has 2 decimal points")
+                Err(Error::NumberPoint(location))
             } else {
                 Ok(Token {
                     token_type: TokenType::Number,
@@ -117,7 +119,7 @@ fn get_number(state: &mut LexerState) -> Result<Token, &'static str> {
                 })
             }
         } else {
-            Err("Character after a decimal point isn't a character representing a decimal digit")
+            Err(Error::NumberDigit(location))
         }
     } else {
         Ok(Token {
@@ -128,7 +130,7 @@ fn get_number(state: &mut LexerState) -> Result<Token, &'static str> {
     }
 }
 
-fn get_string(state: &mut LexerState) -> Result<Token, &'static str> {
+fn get_string(state: &mut LexerState) -> Result<Token, Error> {
     let mut result = String::new();
     
     let location = state.location.clone();
@@ -146,7 +148,7 @@ fn get_string(state: &mut LexerState) -> Result<Token, &'static str> {
     }
 
     if state.character == 0 as char {
-        Err("String isn't terminated: reached end of file")
+        Err(Error::String(location))
     } else {
         advance(state);
 
@@ -158,7 +160,7 @@ fn get_string(state: &mut LexerState) -> Result<Token, &'static str> {
     }
 }
 
-fn get_next_token(state: &mut LexerState) -> Result<Token, &'static str> {
+pub fn get_next_token(state: &mut LexerState) -> Result<Token, Error> {
     while state.character.is_whitespace() {
         advance(state);
     }
@@ -414,7 +416,7 @@ fn get_next_token(state: &mut LexerState) -> Result<Token, &'static str> {
                     location: location
                 })
             },
-            _ => Err("Invalid character")
+            _ => Err(Error::Character(location))
         }
     }
 }
@@ -437,7 +439,7 @@ fn init(source: &String) -> LexerState {
     }
 }
 
-pub fn get_tokens(source: &String) -> Result<Vec<Token>, &'static str> {
+pub fn get_tokens(source: &String) -> Result<Vec<Token>, Error> {
     let mut tokens = Vec::new();
     
     let mut state = init(source);

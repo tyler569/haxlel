@@ -68,6 +68,21 @@ pub struct TokenLocation {
     pub line: usize
 }
 
+impl ToString for TokenLocation {
+    fn to_string(&self) -> String {
+        format!("{}, {}", self.character, self.line)
+    }
+}
+
+#[derive(PartialEq, Clone)]
+pub enum TokenError {
+    String(TokenLocation),
+    NumberDigit(TokenLocation),
+    NumberPoint(TokenLocation),
+    Character(TokenLocation),
+    Undefined
+}
+
 #[derive(PartialEq, Clone)]
 pub struct Token {
     pub token_type: TokenType,
