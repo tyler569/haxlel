@@ -1,5 +1,4 @@
-pub mod token;
-use self::token::TokenLocation;
+use interpreter::token::TokenLocation;
 
 #[derive(PartialEq, Clone)]
 pub enum Error {

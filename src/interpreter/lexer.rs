@@ -1,11 +1,5 @@
-pub mod error;
-use self::error::token::TokenType;
-use self::error::token::TokenLocation;
-use self::error::token::Token;
-
-use self::error::Error;
-
-use std::string::String;
+use interpreter::token::{Token, TokenType, TokenLocation};
+use interpreter::error::Error;
 
 pub struct LexerState<'a> {
     source: &'a String,

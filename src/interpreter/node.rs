@@ -1,6 +1,5 @@
-pub mod lexer;
-use self::lexer::error::token::TokenLocation;
-use self::lexer::error::Error;
+use interpreter::token::TokenLocation;
+use interpreter::error::Error;
 
 use std::hash::Hash;
 use std::hash::Hasher;

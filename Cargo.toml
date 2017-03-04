@@ -1,0 +1,6 @@
+[package]
+name = "haxlel"
+version = "0.1.0"
+authors = ["EEVV, 0eevv0@gmail.com", "Tyler Philbrick <t5j6p9@gmail.com>"]
+
+[dependencies]
